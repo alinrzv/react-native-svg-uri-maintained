@@ -1,6 +1,6 @@
 {
   "name": "react-native-svg-uri-maintained",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Render an SVG Image from an URL",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VicDevJs/react-native-svg-uri-updated.git"
+    "url": "git+https://github.com/alinrzv/react-native-svg-uri-maintained.git"
   },
   "keywords": [
     "react-native",
@@ -26,9 +26,9 @@
     "react-native-svg": "^9.13.6"
   },
   "bugs": {
-    "url": "https://github.com/VicDevJs/react-native-svg-uri-updated/issues"
+    "url": "https://github.com/alinrzv/react-native-svg-uri-maintained/issues"
   },
-  "homepage": "https://github.com/VicDevJs/react-native-svg-uri-updated#readme",
+  "homepage": "https://github.com/alinrzv/react-native-svg-uri-maintained#readme",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-preset-react-native": "^2.1.0",
