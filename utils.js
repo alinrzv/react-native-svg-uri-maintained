@@ -4,19 +4,21 @@ export const camelCaseNodeName = ({nodeName, nodeValue}) => ({nodeName: camelCas
 
 export const removePixelsFromNodeValue = ({nodeName, nodeValue}) => ({nodeName, nodeValue: nodeValue.replace('px', '')});
 
-export const transformStyle = ({nodeName, nodeValue, fillProp}) => {
+export const transformStyle = ({ nodeName, nodeValue, fillProp, strokeProp }) => {
   if (nodeName === 'style') {
-    return nodeValue.split(';')
-      .reduce((acc, attribute) => {
-        const [property, value] = attribute.split(':');
-        if (property == "")
-          return acc;
-        else
-          return { ...acc, [camelCase(property)]: fillProp && property === 'fill' ? fillProp : (strokeProp && property === 'stroke' ? strokeProp : value) };
-        // return {...acc, [camelCase(property)]: fillProp && property === 'fill' ? fillProp : value};
-      }, {});
+    return nodeValue.split(';').reduce((acc, attribute) => {
+      const [property, value] = attribute.split(':');
+      if (property == '') return acc;
+      else
+        return {
+          ...acc,
+          [camelCase(property)]: fillProp && property === 'fill' ? fillProp : (strokeProp && property === 'stroke' ? strokeProp : value),
+        };
+      // return {...acc, [camelCase(property)]: fillProp && property === 'fill' ? fillProp : value};
+    }, {});
   }
   return null;
 };
+
 
 export const getEnabledAttributes = enabledAttributes => ({nodeName}) => enabledAttributes.includes(camelCase(nodeName));
